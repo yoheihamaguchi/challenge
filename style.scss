@@ -2,6 +2,9 @@ html,body,img{
     margin: 0;
     padding: 0;
 }
+body{
+    font-family: 'メイリオ',"Hiragino Kaku Gothic Pro",sans-serif;
+}
 @mixin t-style{
         width: 50%;
         height: auto;
@@ -15,6 +18,8 @@ html,body,img{
         text-decoration: none;
         border:1px solid #fff;
         box-shadow: 1px 1px #bcbcbc; 
+        padding: 10px;
+        margin: 10px;
 }
 .centering{
     text-align: center;
@@ -62,7 +67,7 @@ p.text_top{
  p.catch{
      font-size: 22px;
      display: block;  
-     width: 20%;
+     width: 40%;
     }
 .news{
     max-width: 1000px;
@@ -159,5 +164,43 @@ p.text_top{
         text-align: center;
         margin: 0 auto;
     }
-   
+    p.catch{
+        display: inline-block;
+        width: 100%;
+    }
+    .news{
+        display: inline-block;
+    }
 }
+@media(max-width:420px){
+    li{
+        display: inline-block;
+        font-size: 10px;
+    }
+    .header{
+        position: static;
+    }
+}
+/*---------subpage----------*/
+.w-1000{
+    max-width: 1000px;
+    margin: 0 auto;
+    >h2,>p,ul,li{
+        clear: both;
+    }
+    th{
+        text-align: left;
+    }
+    th,td:not(.no-border){
+        border-bottom: 1px dotted gray;
+    }
+}
+.center-img{
+    text-align: center;
+    float: right;
+}
+.rotate{
+     writing-mode: vertical-rl;
+    border-left: 3px solid orange;
+}
+
