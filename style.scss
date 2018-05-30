@@ -6,14 +6,14 @@ body{
     font-family: 'メイリオ',"Hiragino Kaku Gothic Pro",sans-serif;
     overflow-x: hidden;
 }
-@mixin t-style{
+@mixin t-style{/*テキスト整列に使用*/
         width: 50%;
         height: auto;
         padding:0 20px 50px 20px;
         background: #fff;
         position: absolute;
 }
-@mixin anchor-style{
+@mixin anchor-style{/*アンカータグの仕様*/
      font-size: 20px;
         color: #000;
         text-decoration: none;
@@ -21,9 +21,17 @@ body{
         box-shadow: 1px 1px #bcbcbc; 
         padding: 10px;
         margin: 10px;
-    &:hover{
+        &:hover{
         background-color: rgba(255, 128, 0, 0.3);
+            color: #fff;
     }
+}
+@mixin hover-style{/*テキストホバー時*/
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    }
+    >a{
+        color: #fff;
 }
 .centering{
     text-align: center;
@@ -37,7 +45,7 @@ img.img{
     height: auto;
     position: relative;
 }
-
+ 
 .header{
     position: absolute;
     top: 15px;
@@ -48,6 +56,26 @@ img.img{
         list-style-type: none;
         margin: 15px;      
     }
+    a{
+     position: relative;
+        text-decoration: none;
+        color: #000;
+    }
+    a:after{
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     margin: auto;
+     width: 0%;
+     content: '.';
+     color: transparent;
+     background: orange;
+     height: 1px;
+       }
+    a:hover:after {
+     width: 100%;
+}
 }
 @keyframes fadeIn{
     from{
@@ -78,7 +106,7 @@ p.text_top{
         padding: 0 20px;
         display: inline-block;
     }
- p.catch{
+ p.catch{/*one for all~*/
      font-size: 22px;
      display: block;  
      width: 40%;
@@ -122,7 +150,11 @@ p.text_top{
    @include t-style;
     left: 0;
     bottom: 10%;
-}
+    &:hover{
+        @include hover-style;
+    }  
+    }
+
 .en{
     font-size: 12px;
     margin-top: 0;
@@ -145,6 +177,9 @@ p.text_top{
         @include t-style;
         bottom: 10%;
         right: 0;
+    &:hover{
+            @include hover-style;
+        }
     a{
       @include anchor-style;
     }
@@ -163,11 +198,16 @@ p.text_top{
     left: 0;
     right: 0;
     margin: 0 auto;
+    &:hover{
+           @include hover-style;
+        }
     a{
         @include anchor-style;
     }
 }
-/* Bounce To Left */
+
+/*---------subpage----------*/
+/* Bounce To Left -テキストホバー時のアクション*/
 .hvr-bounce-to-left {
   display: block;
   vertical-align: middle;
@@ -210,7 +250,7 @@ p.text_top{
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
 
-/*---------subpage----------*/
+
 
 .w-1000{
     max-width: 1000px;
@@ -233,7 +273,7 @@ p.text_top{
     text-align: center;
     float: right;
 }
-.rotate{
+.rotate{/*縦書き*/
      writing-mode: vertical-rl;
     border-left: 3px solid orange;
 }
@@ -242,7 +282,7 @@ p.text_top{
 .sub_rinen{
     position: relative;   
 }
-#absolute{
+#absolute{/*将来幸せ~*/
     position: absolute;
     left: -50px;
     bottom: 50px;
@@ -280,6 +320,7 @@ p.text_top{
         position: static;
         text-align: center;
         margin: 0 auto;
+       
     }
     p.catch{
         display: inline-block;
@@ -309,5 +350,10 @@ p.text_top{
     }
     .header{
         position: static;
+    }
+    a{
+        font-size: 10px;
+        margin: 0;
+        padding: 0;
     }
 }

@@ -7,6 +7,9 @@ body {
   font-family: '繝｡繧､繝ｪ繧ｪ',"Hiragino Kaku Gothic Pro",sans-serif;
   overflow-x: hidden; }
 
+> a {
+  color: #fff; }
+
 .centering {
   text-align: center;
   margin: 20px; }
@@ -27,6 +30,23 @@ img.img {
   .header li {
     list-style-type: none;
     margin: 15px; }
+  .header a {
+    position: relative;
+    text-decoration: none;
+    color: #000; }
+  .header a:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: orange;
+    height: 1px; }
+  .header a:hover:after {
+    width: 100%; }
 
 @keyframes fadeIn {
   from {
@@ -79,7 +99,8 @@ p.catch {
     padding: 11.5px 22px;
     flex: 1; }
     .news a:hover {
-      background-color: rgba(255, 128, 0, 0.3); }
+      background-color: rgba(255, 128, 0, 0.3);
+      color: #fff; }
   .news .font_news {
     font-size: 24px;
     font-weight: bold;
@@ -101,7 +122,8 @@ p.catch {
     padding: 10px;
     margin: 10px; }
     .about a:hover {
-      background-color: rgba(255, 128, 0, 0.3); }
+      background-color: rgba(255, 128, 0, 0.3);
+      color: #fff; }
   .about .img {
     width: 100vw;
     height: auto; }
@@ -114,6 +136,9 @@ p.catch {
   position: absolute;
   left: 0;
   bottom: 10%; }
+  .about_text:hover {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff; }
 
 .en {
   font-size: 12px;
@@ -140,6 +165,9 @@ p.catch {
   position: absolute;
   bottom: 10%;
   right: 0; }
+  .life_text:hover {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff; }
   .life_text a {
     font-size: 20px;
     color: #000;
@@ -149,7 +177,8 @@ p.catch {
     padding: 10px;
     margin: 10px; }
     .life_text a:hover {
-      background-color: rgba(255, 128, 0, 0.3); }
+      background-color: rgba(255, 128, 0, 0.3);
+      color: #fff; }
 
 .recruit {
   position: relative;
@@ -168,6 +197,9 @@ p.catch {
   left: 0;
   right: 0;
   margin: 0 auto; }
+  .recruit_text:hover {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff; }
   .recruit_text a {
     font-size: 20px;
     color: #000;
@@ -177,7 +209,8 @@ p.catch {
     padding: 10px;
     margin: 10px; }
     .recruit_text a:hover {
-      background-color: rgba(255, 128, 0, 0.3); }
+      background-color: rgba(255, 128, 0, 0.3);
+      color: #fff; }
 
 /* Bounce To Left */
 .hvr-bounce-to-left {
