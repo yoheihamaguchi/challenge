@@ -4,6 +4,7 @@ html,body,img{
 }
 body{
     font-family: 'メイリオ',"Hiragino Kaku Gothic Pro",sans-serif;
+    overflow-x: hidden;
 }
 @mixin t-style{
         width: 50%;
@@ -20,9 +21,13 @@ body{
         box-shadow: 1px 1px #bcbcbc; 
         padding: 10px;
         margin: 10px;
+    &:hover{
+        background-color: rgba(255, 128, 0, 0.3);
+    }
 }
 .centering{
     text-align: center;
+    margin: 20px;
     >p{
         text-align: left;
     }
@@ -44,7 +49,14 @@ img.img{
         margin: 15px;      
     }
 }
-
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
 .text{
     position: absolute;
     bottom: 50px;
@@ -53,7 +65,9 @@ img.img{
     .catch,
     .text_top,
     .text_bottom{
-       background: #fff;    
+       background: #fff; 
+        animation: fadeIn 3s ;
+        animation-iteration-count: 1;
     }
 }
 p.text_bottom,
@@ -68,17 +82,17 @@ p.text_top{
      font-size: 22px;
      display: block;  
      width: 40%;
+     text-align: center;
     }
 .news{
     max-width: 1000px;
     margin: auto;
     display: flex;
+    justify-content: center;
+    vertical-align: baseline;
     padding-bottom: 50px;
     a{
-        text-decoration: none;
-        color: #000;
-        border: 1px solid #000;
-        margin: auto auto;
+        @include anchor-style;
         display: inline-block;
         font-size: 12px;
         padding: 11.5px 22px;
@@ -153,9 +167,112 @@ p.text_top{
         @include anchor-style;
     }
 }
+/* Bounce To Left */
+.hvr-bounce-to-left {
+  display: block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 2s;
+  transition-duration: 2s;
+}
+.hvr-bounce-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: orange;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+.hvr-bounce-to-left:hover, .hvr-bounce-to-left:focus, .hvr-bounce-to-left:active {
+  color: white;
+}
+.hvr-bounce-to-left:hover:before, .hvr-bounce-to-left:focus:before, .hvr-bounce-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+/*---------subpage----------*/
+
+.w-1000{
+    max-width: 1000px;
+    margin: 0 auto 100px auto;
+    >h2,>p,ul,li{
+        clear: both;
+    }
+    table{
+        border-spacing: 10px;
+    }
+      th{
+        text-align: left;
+    }
+    th:not(.no-border),
+    td:not(.no-border){
+        border-bottom: 1px dotted gray;
+    }
+}
+.center-img{
+    text-align: center;
+    float: right;
+}
+.rotate{
+     writing-mode: vertical-rl;
+    border-left: 3px solid orange;
+}
+
+.sub_gaiyou,
+.sub_rinen{
+    position: relative;   
+}
+#absolute{
+    position: absolute;
+    left: -50px;
+    bottom: 50px;
+    background: #fff;
+    padding: 10px;
+}
+.g-text{
+    width:40%;
+    background-color: #fff;
+    font-size: small;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+
+/*----@media----------*/
 @media(max-width:1000px){
     html{
-        font-size: 12px !important;
+        font-size: 14px !important;
+        width: 100vw;
+    }
+    body{
+        margin: 10px;
+    }
+    img{
+        width: 100%;
     }
     .container{
         width: 50vw;
@@ -171,6 +288,19 @@ p.text_top{
     .news{
         display: inline-block;
     }
+    .w-1000{
+     clear: both;
+    }
+    .rotate{
+     writing-mode:horizontal-tb;
+    }
+    #absolute{
+        position: static;
+    }
+    .g-text{
+        width: 100%;
+        position:static;
+    }
 }
 @media(max-width:420px){
     li{
@@ -181,26 +311,3 @@ p.text_top{
         position: static;
     }
 }
-/*---------subpage----------*/
-.w-1000{
-    max-width: 1000px;
-    margin: 0 auto;
-    >h2,>p,ul,li{
-        clear: both;
-    }
-    th{
-        text-align: left;
-    }
-    th,td:not(.no-border){
-        border-bottom: 1px dotted gray;
-    }
-}
-.center-img{
-    text-align: center;
-    float: right;
-}
-.rotate{
-     writing-mode: vertical-rl;
-    border-left: 3px solid orange;
-}
-
