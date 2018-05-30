@@ -10,6 +10,16 @@ body {
 > a {
   color: #fff; }
 
+.logo {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 10%;
+  height: auto; }
+
+.top > .img-layout {
+  text-align: center; }
+
 .centering {
   text-align: center;
   margin: 20px; }
@@ -17,7 +27,7 @@ body {
     text-align: left; }
 
 img.img {
-  width: 100vw;
+  width: 80vw;
   height: auto;
   position: relative; }
 
@@ -55,7 +65,7 @@ img.img {
     opacity: 1; } }
 .text {
   position: absolute;
-  bottom: 50px;
+  bottom: 100px;
   left: 0;
   padding: 10px; }
   .text .catch,
@@ -74,6 +84,7 @@ p.text_top {
   display: inline-block; }
 
 p.catch {
+  /*one for all~*/
   font-size: 22px;
   display: block;
   width: 40%;
@@ -125,8 +136,10 @@ p.catch {
       background-color: rgba(255, 128, 0, 0.3);
       color: #fff; }
   .about .img {
-    width: 100vw;
+    width: 80vw;
     height: auto; }
+  .about .img-layout {
+    text-align: right; }
 
 .about_text {
   width: 50%;
@@ -154,7 +167,7 @@ p.catch {
   position: relative;
   margin-bottom: 100px; }
   .life .img {
-    width: 100vw;
+    width: 80vw;
     height: auto; }
 
 .life_text {
@@ -212,6 +225,7 @@ p.catch {
       background-color: rgba(255, 128, 0, 0.3);
       color: #fff; }
 
+/*---------subpage----------*/
 /* Bounce To Left */
 .hvr-bounce-to-left {
   display: block;
@@ -254,7 +268,6 @@ p.catch {
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); }
 
-/*---------subpage----------*/
 .w-1000 {
   max-width: 1000px;
   margin: 0 auto 100px auto; }
@@ -335,13 +348,26 @@ p.catch {
 
   .g-text {
     width: 100%;
-    position: static; } }
+    position: static; }
+
+  .about .img-layout,
+  .life .img-layout {
+    text-align: center; } }
 @media (max-width: 420px) {
   li {
     display: inline-block;
     font-size: 10px; }
 
   .header {
-    position: static; } }
+    position: static; }
+
+  a {
+    display: block;
+    font-size: 10px;
+    margin: 0;
+    padding: 0; }
+
+  .font_text {
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,14 +6,14 @@ body{
     font-family: 'メイリオ',"Hiragino Kaku Gothic Pro",sans-serif;
     overflow-x: hidden;
 }
-@mixin t-style{/*テキスト整列に使用*/
+@mixin t-style{
         width: 50%;
         height: auto;
         padding:0 20px 50px 20px;
         background: #fff;
         position: absolute;
 }
-@mixin anchor-style{/*アンカータグの仕様*/
+@mixin anchor-style{
      font-size: 20px;
         color: #000;
         text-decoration: none;
@@ -26,12 +26,23 @@ body{
             color: #fff;
     }
 }
-@mixin hover-style{/*テキストホバー時*/
+@mixin hover-style{
     background: rgba(0,0,0,0.5);
     color: #fff;
     }
     >a{
         color: #fff;
+}
+
+.logo{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 10%;
+    height: auto;
+}
+.top>.img-layout{
+    text-align: center;
 }
 .centering{
     text-align: center;
@@ -41,7 +52,7 @@ body{
     }
 }
 img.img{
-    width: 100vw;
+    width: 80vw;
     height: auto;
     position: relative;
 }
@@ -87,7 +98,7 @@ img.img{
 }
 .text{
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
     left: 0;
     padding: 10px;
     .catch,
@@ -141,9 +152,14 @@ p.text_top{
      a{
           @include anchor-style;
         }
+    
     .img{
-        width: 100vw;
+        width: 80vw;
         height: auto;
+        
+    }
+    .img-layout{
+        text-align: right;
     }
 }
 .about_text{
@@ -169,7 +185,7 @@ p.text_top{
     position: relative;
     margin-bottom: 100px;
     .img{
-        width: 100vw;
+        width: 80vw;
         height: auto;
     }
     }
@@ -207,7 +223,7 @@ p.text_top{
 }
 
 /*---------subpage----------*/
-/* Bounce To Left -テキストホバー時のアクション*/
+/* Bounce To Left */
 .hvr-bounce-to-left {
   display: block;
   vertical-align: middle;
@@ -273,7 +289,7 @@ p.text_top{
     text-align: center;
     float: right;
 }
-.rotate{/*縦書き*/
+.rotate{
      writing-mode: vertical-rl;
     border-left: 3px solid orange;
 }
@@ -282,7 +298,7 @@ p.text_top{
 .sub_rinen{
     position: relative;   
 }
-#absolute{/*将来幸せ~*/
+#absolute{
     position: absolute;
     left: -50px;
     bottom: 50px;
@@ -342,6 +358,11 @@ p.text_top{
         width: 100%;
         position:static;
     }
+    .about .img-layout,
+    .life .img-layout{
+        text-align: center;
+    }
+    
 }
 @media(max-width:420px){
     li{
@@ -352,8 +373,13 @@ p.text_top{
         position: static;
     }
     a{
+        display: block;
         font-size: 10px;
         margin: 0;
         padding: 0;
     }
+    .font_text{
+        display: block;
+    }
+    
 }
