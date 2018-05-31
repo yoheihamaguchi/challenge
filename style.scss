@@ -63,6 +63,7 @@ img.img{
     right: 25px;
     display: flex;
     background-color: #fff;
+    box-shadow: 5px 5px #bcbcbc;
     li{
         list-style-type: none;
         margin: 15px;      
@@ -275,7 +276,7 @@ p.text_top{
         clear: both;
     }
     table{
-        border-spacing: 10px;
+        border-spacing: 20px;
     }
       th{
         text-align: left;
@@ -287,6 +288,7 @@ p.text_top{
 }
 .center-img{
     text-align: center;
+    
     float: right;
 }
 .rotate{
@@ -316,7 +318,11 @@ p.text_top{
     bottom: 0;
     margin: 0 auto;
 }
-
+.topimg{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
 
 /*----@media----------*/
 @media(max-width:1000px){
@@ -327,7 +333,7 @@ p.text_top{
     body{
         margin: 10px;
     }
-    img{
+    img,.topimg{
         width: 100%;
     }
     .container{
@@ -335,8 +341,11 @@ p.text_top{
         height: auto;
         position: static;
         text-align: center;
-        margin: 0 auto;
-       
+        margin: 0 auto;  
+    }
+    .t-style{
+        position: static;
+        text-align: center;
     }
     p.catch{
         display: inline-block;
@@ -360,6 +369,14 @@ p.text_top{
     }
     .about .img-layout,
     .life .img-layout{
+        text-align: center;
+    }
+    .header{
+        position: static;
+     
+        li{
+         margin: 10px auto;
+        }
         text-align: center;
     }
     
